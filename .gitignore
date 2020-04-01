@@ -1,0 +1,6 @@
+repo-stage
+x86_64
+*.x86_64
+*.tar.gz
+*.tar.xz
+*.tgz

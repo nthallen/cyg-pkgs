@@ -1,0 +1,35 @@
+# icosfit.cygport - directions for packaging icosfit for cygwin
+
+# Copyright (C) 2019 President and Fellows of Harvard University
+# This file is free software; I give unlimited permission to copy and/or
+# distribute it, with or without modifications, as long as this notice is
+# preserved.
+
+NAME=icosfit
+VERSION=3.01
+RELEASE=1
+
+SUMMARY="Spectroscopic Line Fitting Tool"
+DESCRIPTION="Spectroscopic line fitting tool supporting
+Herriott and Integrated Cavity Output Spectroscopy (ICOS)
+cells stimulated by diode lasers."
+CATEGORY=Science
+
+SRC_URI=${PN}_src_$PV.tgz
+
+src_compile()
+{
+  cd $B
+  cygmake -f $S/icosfit/Makefile VPATH=$S/icosfit icosfit.exe
+}
+
+src_install() {
+  cd $B
+  dobin icosfit.exe
+  dodir /usr/share/icosfit /usr/share/icosfit/QT
+  insinto /usr/share/icosfit
+  doins $S/Matlab/ICOSfit/*.m
+  doins $S/Matlab/ICOSfit/*.fig
+  insinto /usr/share/icosfit/QT
+  doins $S/Matlab/ICOSfit/QT/QT_*.dat
+}

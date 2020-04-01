@@ -1,0 +1,11 @@
+--- origsrc/icosfit-2.23/global.c	2015-02-11 14:14:16.000000000 -0500
++++ src/icosfit-2.23/global.c	2016-11-23 17:53:22.895564500 -0500
+@@ -44,7 +44,7 @@ GlobalData_t::GlobalData_t() {
+   OutputFile = "ICOSsum.dat";
+   LogFile = "ICOSfit.log";
+   MFile = "ICOSconfig.m";
+-  QTdir = "/usr/local/share/QT";
++  QTdir = "/usr/share/icosfit";
+   Verbosity = 0;
+   absorb = 0;
+   N_Passes = 0;
