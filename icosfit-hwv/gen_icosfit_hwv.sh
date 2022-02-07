@@ -20,10 +20,10 @@ pkgverrel=$pkgname-$verrel
 
 srcroot=$PWD/$pkgname
 [ -d $srcroot/usr ] || nl_error Could not locate source root
-[ -d x86_64/release/$pkgname ] ||
-  mkdir -p x86_64/release/$pkgname
 
-cd x86_64/release/$pkgname
+[ -d inst ] || mkdir -p inst
+cd inst
+
 tar -Jcf $pkgverrel.tar.xz -C $srcroot usr
 tar -Jcf $pkgverrel-src.tar.xz -C $srcroot usr
 
