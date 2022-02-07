@@ -42,4 +42,4 @@ EOF
 
 dest=/usr/src/repo-stage/x86_64/release/$pkgname
 [ -d $dest ] || mkdir $dest
-#cp -uv * $dest
+cp -uv * $dest
