@@ -16,7 +16,10 @@ cells stimulated by diode lasers."
 CATEGORY=Science
 
 #GIT_URI="https://github.com/nthallen/icosfit.git"
-SRC_URI=${PN}-${PV}.tar.xz
+#SRC_URI=${PN}-${PV}.tar.xz
+GIT_URI=https://github.com/nthallen/icosfit.git
+GIT_TAG=v4.2.7
+inherit git
 
 CYGCMAKE_ARGS="-DQTDIR_DEFAULT=/usr/share/icosfit/Matlab/ICOSfit/QT"
 CYGCMAKE_GENERATOR="Unix Makefiles"
